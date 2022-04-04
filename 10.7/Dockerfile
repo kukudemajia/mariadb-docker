@@ -56,6 +56,7 @@ RUN set -ex; \
 		tzdata \
 		xz-utils \
 		zstd \
+		openssl \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
