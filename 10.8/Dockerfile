@@ -22,7 +22,7 @@ RUN set -ex; \
 ENV GOSU_VERSION 1.14
 RUN set -eux; \
 	apt-get update; \
-	apt-get install -y openssl; \
+	apt-get install -y openssl sed; \
 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates; \
 	savedAptMark="$(apt-mark showmanual)"; \
 	apt-get install -y --no-install-recommends wget; \
