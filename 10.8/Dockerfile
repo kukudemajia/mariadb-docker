@@ -119,6 +119,7 @@ RUN set -ex; \
 	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; \
 # ensure that /var/run/mysqld (used for socket and lock files) is writable regardless of the UID our mysqld instance ends up having at runtime
 	chmod 777 /var/run/mysqld; \
+	ln -s /usr/sbin/mysqld /usr/sbin/mariadbd; \
 # comment out a few problematic configuration values
 	find /etc/mysql/ -name '*.cnf' -print0 \
 		| xargs -0 grep -lZE '^(bind-address|log|user\s)' \
