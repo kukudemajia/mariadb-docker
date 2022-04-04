@@ -123,7 +123,7 @@ RUN set -ex; \
 # comment out a few problematic configuration values
 	find /etc/mysql/ -name '*.cnf' -print0 \
 		| xargs -0 grep -lZE '^(bind-address|log|user\s)' \
-		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\s)/#&/'; \
+		| xargs -rt -0 sed -Ei 's/^(bind-address|log|user\s)/#&/'; 
 
 VOLUME /var/lib/mysql
 
