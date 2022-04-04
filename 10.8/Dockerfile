@@ -110,17 +110,7 @@ RUN set -ex; \
 # mariadb-backup is installed at the same time so that `mysql-common` is only installed once from just mariadb repos
 		mariadb-backup \
 		socat \
-	; \
-# Temporary work around for MDEV-27980, closes #417
-	sed --follow-symlinks -i -e 's/--loose-disable-plugin-file-key-management//' /usr/bin/mysql_install_db ; \
-	rm -rf /var/lib/apt/lists/*; \
-# purge and re-create /var/lib/mysql with appropriate ownership
-	rm -rf /var/lib/mysql; \
-	mkdir -p /var/lib/mysql /var/run/mysqld; \
-	chown -R mysql:mysql /var/lib/mysql /var/run/mysqld; \
-# ensure that /var/run/mysqld (used for socket and lock files) is writable regardless of the UID our mysqld instance ends up having at runtime
-	chmod 777 /var/run/mysqld; 
-
+	; 
 VOLUME /var/lib/mysql
 
 COPY healthcheck.sh /usr/local/bin/healthcheck.sh
