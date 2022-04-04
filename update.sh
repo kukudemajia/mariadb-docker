@@ -91,7 +91,7 @@ for version in "${versions[@]}"; do
 	done
 	if [ -z "$arches" ]; then
 		# assume default
-		arches=" amd64 arm64v8 ppc64le s390x"
+		arches=" amd64 arm64v8 ppc64le s390x arm32v7"
 	fi
 
 	cp Dockerfile.template "$version/Dockerfile"
