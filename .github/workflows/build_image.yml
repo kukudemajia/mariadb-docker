@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  multi:
+  build:
     runs-on: ubuntu-latest
     steps:
       -
@@ -27,9 +27,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: 10.7/Dockerfile
+          file: 10.8/Dockerfile
           platforms: linux/arm/v7
           push: true
           tags: |
             kukudemajia/armv7hf-mariadb:latest
-            kukudemajia/armv7hf-mariadb:10.7.3
+            kukudemajia/armv7hf-mariadb:10.8.2
