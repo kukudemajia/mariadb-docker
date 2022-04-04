@@ -32,3 +32,4 @@ jobs:
           push: true
           tags: |
             kukudemajia/armv7hf-mariadb:latest
+            kukudemajia/armv7hf-mariadb:10.8.2
