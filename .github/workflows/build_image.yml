@@ -28,7 +28,7 @@ jobs:
         with:
           context: .
           file: 10.8/Dockerfile
-          platforms: linux/arm/v7
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
           push: true
           tags: |
             kukudemajia/armv7hf-mariadb:latest
