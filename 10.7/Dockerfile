@@ -105,7 +105,9 @@ RUN set -ex; \
 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password password 'unused'; \
 		echo "mariadb-server-$MARIADB_MAJOR" mysql-server/root_password_again password 'unused'; \
 	} | debconf-set-selections; \
-	apt-get update;
+	apt-get update; \
+	apt-get install -y \
+	"mariadb-server=$MARIADB_VERSION"
 
 
 VOLUME /var/lib/mysql
